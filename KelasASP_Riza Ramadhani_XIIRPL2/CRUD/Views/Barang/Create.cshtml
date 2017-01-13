@@ -1,0 +1,68 @@
+﻿@model CRUD.Models.Barang
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Barang</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NamaBarang)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NamaBarang)
+            @Html.ValidationMessageFor(model => model.NamaBarang)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Merk)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Merk)
+            @Html.ValidationMessageFor(model => model.Merk)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Harga)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Harga)
+            @Html.ValidationMessageFor(model => model.Harga)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Stok)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Stok)
+            @Html.ValidationMessageFor(model => model.Stok)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDKasir, "Kasir")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("IDKasir", String.Empty)
+            @Html.ValidationMessageFor(model => model.IDKasir)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

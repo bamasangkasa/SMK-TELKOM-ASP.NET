@@ -1,0 +1,65 @@
+﻿@model IEnumerable<BookingHotel.Models.Pemesanan>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table cellpadding="10">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaDepan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaBelakang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kamar.NamaKamar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TanggalPesan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Jumlah)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaDepan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaBelakang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kamar.NamaKamar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TanggalPesan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Jumlah)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdPesan }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdPesan }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdPesan })
+        </td>
+    </tr>
+}
+
+</table>

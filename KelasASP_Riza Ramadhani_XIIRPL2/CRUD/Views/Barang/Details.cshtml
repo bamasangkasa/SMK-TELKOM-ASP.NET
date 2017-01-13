@@ -1,0 +1,50 @@
+﻿@model CRUD.Models.Barang
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Barang</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NamaBarang)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NamaBarang)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Merk)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Merk)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Harga)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Harga)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Stok)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Stok)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Kasir.NamaKasir)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Kasir.NamaKasir)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IDBarang }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

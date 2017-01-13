@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Dosen.Kuliah>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<p>
+    @using (@Html.BeginForm())
+    {
+        <label>Search</label>
+        <input type="text" name="searchName" placeholder="Name" />
+        
+        @Html.DropDownList("searchMapel", "MaPel")
+
+        <input type="submit" value="Go" />
+    }
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaPelajaran)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JumlahJam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Semester)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dosen.NamaDosen)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaPelajaran)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JumlahJam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Semester)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dosen.NamaDosen)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.kodemapel }) |
+            @Html.ActionLink("Details", "Details", new { id=item.kodemapel }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.kodemapel })
+        </td>
+    </tr>
+}
+
+</table>

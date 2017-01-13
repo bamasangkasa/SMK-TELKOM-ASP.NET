@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CRUD.Models.Kasir>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    @using (@Html.BeginForm())
+    {
+        <label> Search </label>
+        <input type="text" name="searchAlamat" />
+        <input type="submit" value="Go" />
+    }
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaKasir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Alamat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaKasir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Alamat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDKasir }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDKasir }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDKasir })
+        </td>
+    </tr>
+}
+
+</table>

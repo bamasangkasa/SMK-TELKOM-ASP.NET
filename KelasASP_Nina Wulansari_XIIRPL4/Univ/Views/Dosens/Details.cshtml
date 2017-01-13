@@ -1,0 +1,42 @@
+﻿@model Univ.Models.Dosen
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Dosen</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NamaDosen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamaDosen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlamatDosen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlamatDosen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MataKuliah)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MataKuliah)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DosenID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

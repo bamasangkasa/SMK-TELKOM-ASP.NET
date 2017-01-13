@@ -1,0 +1,50 @@
+﻿@model CRUD2tabel.Models.MahasiswaModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>MahasiswaModels</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nama)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nama)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.alamat)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.alamat)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.jenis_kelamin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.jenis_kelamin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IPK)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IPK)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FakultasModels.Fakultas)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FakultasModels.Fakultas)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID_mhs }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

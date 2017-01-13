@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Sekolah2.Models.Siswa>
+
+@{
+    ViewBag.Title = "Siswa";
+}
+
+<h2>Siswa</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+<p>
+    @using (@Html.BeginForm())
+    {
+        <label>Search</label>
+        
+            <tr><td>
+        <input type="text" name="searchName" class="form-control" style="width:100px;" placeholder="Name" /></td>
+        <td><input type="submit" class="btn btn-warning" style="font-size:12px;" value="Go" /></td></tr>
+           
+    }
+</p>
+    </table>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaSiswa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kelas.NamaKelas)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaSiswa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kelas.NamaKelas)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SiswaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SiswaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SiswaID })
+        </td>
+    </tr>
+}
+
+</table>

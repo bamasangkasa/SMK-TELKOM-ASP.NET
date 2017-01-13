@@ -1,0 +1,39 @@
+﻿@model IEnumerable<tes2.Models.Sekolah>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaSekolah)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kota)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaSekolah)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kota)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDSekolah }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDSekolah }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDSekolah })
+        </td>
+    </tr>
+}
+
+</table>

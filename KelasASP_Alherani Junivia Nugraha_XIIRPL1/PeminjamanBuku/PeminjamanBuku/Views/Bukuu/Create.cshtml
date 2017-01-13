@@ -1,0 +1,67 @@
+﻿@model PeminjamanBuku.Models.Buku
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Buku</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Judul)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Judul)
+            @Html.ValidationMessageFor(model => model.Judul)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Pengarang)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pengarang)
+            @Html.ValidationMessageFor(model => model.Pengarang)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Penerbit)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Penerbit)
+            @Html.ValidationMessageFor(model => model.Penerbit)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TahunTerbit)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TahunTerbit)
+            @Html.ValidationMessageFor(model => model.TahunTerbit)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NoAnggota, "Anggota")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("NoAnggota", String.Empty)
+            @Html.ValidationMessageFor(model => model.NoAnggota)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

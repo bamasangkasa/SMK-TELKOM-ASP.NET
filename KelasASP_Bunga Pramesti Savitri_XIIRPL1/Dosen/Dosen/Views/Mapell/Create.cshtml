@@ -1,0 +1,59 @@
+﻿@model Dosen.Kuliah
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Kuliah</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NamaPelajaran)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NamaPelajaran)
+            @Html.ValidationMessageFor(model => model.NamaPelajaran)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.JumlahJam)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.JumlahJam)
+            @Html.ValidationMessageFor(model => model.JumlahJam)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Semester)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Semester)
+            @Html.ValidationMessageFor(model => model.Semester)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DosenID, "Dosen")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DosenID", String.Empty)
+            @Html.ValidationMessageFor(model => model.DosenID)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

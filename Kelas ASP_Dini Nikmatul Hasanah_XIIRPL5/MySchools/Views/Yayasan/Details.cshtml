@@ -1,0 +1,29 @@
+﻿@model MySchools.Models.Yayasan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Yayasan</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NamaYayasan)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NamaYayasan)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Alamat)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Alamat)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.YayasanID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,46 @@
+﻿@model MyCompany.Models.Murid
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Murid</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NamaMurid)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NamaMurid)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Score)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Score)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Kelas.Nama)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Kelas.Nama)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

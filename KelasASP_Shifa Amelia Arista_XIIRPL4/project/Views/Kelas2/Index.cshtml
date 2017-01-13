@@ -1,0 +1,47 @@
+﻿@model IEnumerable<project.Models.Kelas>
+
+@{
+    ViewBag.Title = "Kelas";
+}
+
+<h2>Index</h2>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!--<p>
+    @using (@Html.BeginForm())
+    {
+        <label> Search: </label>
+        <input type="text" name="searchKelas" />
+        <input type="submit" class="btn btn-info" value="Go" />
+    }
+</p>-->
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaKelas)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaKelas)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KodeKelas }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KodeKelas }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KodeKelas })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,29 @@
+﻿@model tes2.Models.Sekolah
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Sekolah</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NamaSekolah)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NamaSekolah)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Kota)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Kota)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IDSekolah }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

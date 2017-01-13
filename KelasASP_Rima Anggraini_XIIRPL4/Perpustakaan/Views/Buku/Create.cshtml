@@ -1,0 +1,51 @@
+﻿@model Perpustakaan.Models.Buku
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Buku</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nama_Buku)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nama_Buku)
+            @Html.ValidationMessageFor(model => model.Nama_Buku)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nama_Pengarang)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nama_Pengarang)
+            @Html.ValidationMessageFor(model => model.Nama_Pengarang)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Tahun_Terbit)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Tahun_Terbit)
+            @Html.ValidationMessageFor(model => model.Tahun_Terbit)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

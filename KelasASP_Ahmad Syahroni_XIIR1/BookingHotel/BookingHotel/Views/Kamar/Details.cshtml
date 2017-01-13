@@ -1,0 +1,22 @@
+﻿@model BookingHotel.Models.Kamar
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Kamar</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NamaKamar)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NamaKamar)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IDJenisKamar }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

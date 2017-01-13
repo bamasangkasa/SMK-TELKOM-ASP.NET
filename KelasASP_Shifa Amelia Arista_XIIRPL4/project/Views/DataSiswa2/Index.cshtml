@@ -1,0 +1,94 @@
+﻿@model IEnumerable<project.Models.DataSiswa>
+
+@{
+    ViewBag.Title = "Data Siswa";
+}
+
+<h2>Index</h2>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<p>
+    @using (@Html.BeginForm())
+    {
+        <label>Search</label>
+        <input  type="text" name="searchName" placeholder="Nama" />
+        @Html.DropDownList("searchKelas", "Kelas")
+
+        <input type="submit" class="btn btn-info" value="Go" />
+    }
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaLengkap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TTL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Alamat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoTelp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HireDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kelas.NamaKelas)
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaLengkap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TTL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Alamat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoTelp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HireDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kelas.NamaKelas)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.NIS }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NIS }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NIS })
+        </td>
+    </tr>
+}
+
+</table>

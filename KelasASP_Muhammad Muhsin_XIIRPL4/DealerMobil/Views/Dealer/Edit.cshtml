@@ -1,0 +1,61 @@
+﻿@model DealerMobil.Models.Dealer
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Dealer</legend>
+
+        @Html.HiddenFor(model => model.iddealer)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.namadealer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.namadealer)
+            @Html.ValidationMessageFor(model => model.namadealer)
+        </div>
+        <br><br>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nomer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nomer)
+            @Html.ValidationMessageFor(model => model.nomer)
+        </div>
+        <br><br>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.alamatdealer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.alamatdealer)
+            @Html.ValidationMessageFor(model => model.alamatdealer)
+        </div>
+        <br><br>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idmobil, "Mobil")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idmobil", String.Empty)
+            @Html.ValidationMessageFor(model => model.idmobil)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

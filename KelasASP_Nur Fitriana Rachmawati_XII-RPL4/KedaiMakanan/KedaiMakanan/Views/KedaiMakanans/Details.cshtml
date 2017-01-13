@@ -1,0 +1,50 @@
+﻿@model KedaiMakanan.Models.KedaiMakanan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KedaiMakanan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Menu.NamaMenu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Menu.NamaMenu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NamaPelaggan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamaPelaggan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MenuMakanan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MenuMakanan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TanggalPembelian)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TanggalPembelian)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PelangganID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

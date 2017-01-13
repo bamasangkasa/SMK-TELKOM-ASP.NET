@@ -1,0 +1,29 @@
+﻿@model Biodata.Models.BiodataAnak
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>BiodataAnak</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nama)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nama)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Umur)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Umur)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.BiodataAnakID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

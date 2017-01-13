@@ -1,0 +1,57 @@
+﻿@model BookingHotel.Models.Pemesanan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Pemesanan</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NamaDepan)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NamaDepan)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NamaBelakang)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NamaBelakang)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Kamar.NamaKamar)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Kamar.NamaKamar)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TanggalPesan)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TanggalPesan)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Jumlah)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Jumlah)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IdPesan }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

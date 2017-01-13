@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Perpustakaan.Models.Buku>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @using (@Html.BeginForm())
+    {
+        <label>Search</label>
+        <input type="text" name="SearchJudul" />
+        <input type="submit" value="go" />
+    }
+</p>
+<p>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nama_Buku)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nama_Pengarang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tahun_Terbit)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nama_Buku)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nama_Pengarang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tahun_Terbit)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id_Buku }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id_Buku }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id_Buku })
+        </td>
+    </tr>
+}
+
+</table>
+@Html.ActionLink("Back to Home", "Index", "Home")

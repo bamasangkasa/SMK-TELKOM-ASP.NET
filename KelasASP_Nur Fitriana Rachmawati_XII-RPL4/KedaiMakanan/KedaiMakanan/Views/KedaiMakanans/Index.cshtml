@@ -1,0 +1,63 @@
+﻿@model IEnumerable<KedaiMakanan.Models.KedaiMakanan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<p>
+    @using (Html.BeginForm())
+    {
+        <label>Search </label>
+      <input type="text" name="searchName" placeholder="Name" />
+        @Html.DropDownList("searchMenu", "MenuMakanan") 
+        
+        <input type="submit" value="Go" />    
+    }
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Menu.NamaMenu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaPelaggan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenuMakanan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TanggalPembelian)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Menu.NamaMenu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaPelaggan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MenuMakanan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TanggalPembelian)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PelangganID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PelangganID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PelangganID })
+        </td>
+    </tr>
+}
+
+</table>

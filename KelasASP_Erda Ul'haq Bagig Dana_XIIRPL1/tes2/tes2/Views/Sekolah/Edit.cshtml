@@ -1,0 +1,45 @@
+﻿@model tes2.Models.Sekolah
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Sekolah</legend>
+
+        @Html.HiddenFor(model => model.IDSekolah)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NamaSekolah)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NamaSekolah)
+            @Html.ValidationMessageFor(model => model.NamaSekolah)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Kota)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Kota)
+            @Html.ValidationMessageFor(model => model.Kota)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

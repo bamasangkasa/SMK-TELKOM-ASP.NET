@@ -1,0 +1,50 @@
+﻿@model PeminjamanBuku.Models.Buku
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Buku</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Judul)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Judul)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pengarang)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pengarang)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Penerbit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Penerbit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TahunTerbit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TahunTerbit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Anggota.NamaAnggota)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Anggota.NamaAnggota)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.KodeBuku }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

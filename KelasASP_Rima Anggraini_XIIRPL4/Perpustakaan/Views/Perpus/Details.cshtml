@@ -1,0 +1,36 @@
+﻿@model Perpustakaan.Models.Peminjaman
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Perpustakaan</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nama_Peminjam)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nama_Peminjam)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tgl_Peminjaman)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tgl_Peminjaman)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Buku.Nama_Buku)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Buku.Nama_Buku)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id_peminjaman }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

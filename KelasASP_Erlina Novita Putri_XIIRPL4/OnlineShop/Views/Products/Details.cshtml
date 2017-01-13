@@ -1,0 +1,57 @@
+﻿@model OnlineShop.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Product</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TanggalPembelian)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TanggalPembelian)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Jumlah)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Jumlah)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NamaBarang)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NamaBarang)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MerkBarang)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MerkBarang)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Harga)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Harga)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Customer.Nama)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Customer.Nama)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

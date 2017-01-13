@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DealerMobil.Models.Dealer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @using (@Html.BeginForm())
+    { 
+        <label>Search</label>
+        <input type="text" name="searchNama" placeholder="Nama" />
+         @Html.DropDownList("searchMobil","Mobil")
+        <input type="submit" value="Go" />
+    }
+    
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table cellpadding="10" width="900">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.namadealer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.alamatdealer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobil.namamobil)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.namadealer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.alamatdealer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobil.namamobil)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.iddealer }) |
+            @Html.ActionLink("Details", "Details", new { id=item.iddealer }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.iddealer })
+        </td>
+    </tr>
+}
+
+</table>

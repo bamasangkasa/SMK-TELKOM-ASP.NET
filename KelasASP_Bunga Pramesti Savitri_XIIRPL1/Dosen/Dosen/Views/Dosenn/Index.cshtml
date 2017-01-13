@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Dosen.Dosen>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    @using (@Html.BeginForm())
+    {
+        <label> Search : </label>
+        <input type ="text" name="searchKode" />
+        <input type="submit" value="Go" />
+    }
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaDosen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KodeDosen)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaDosen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KodeDosen)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DosenID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DosenID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DosenID })
+        </td>
+    </tr>
+}
+
+</table>

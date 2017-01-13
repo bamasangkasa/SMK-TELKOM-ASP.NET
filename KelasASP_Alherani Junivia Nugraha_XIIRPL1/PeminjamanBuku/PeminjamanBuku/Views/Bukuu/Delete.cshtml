@@ -1,0 +1,53 @@
+﻿@model PeminjamanBuku.Models.Buku
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Buku</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Judul)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Judul)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pengarang)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pengarang)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Penerbit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Penerbit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TahunTerbit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TahunTerbit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Anggota.NamaAnggota)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Anggota.NamaAnggota)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

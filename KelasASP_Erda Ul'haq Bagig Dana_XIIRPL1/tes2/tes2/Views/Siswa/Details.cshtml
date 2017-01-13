@@ -1,0 +1,43 @@
+﻿@model tes2.Models.Siswa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Siswa</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NamaLengkap)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NamaLengkap)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NISN)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NISN)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sekolah.NamaSekolah)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sekolah.NamaSekolah)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IDSiswa }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

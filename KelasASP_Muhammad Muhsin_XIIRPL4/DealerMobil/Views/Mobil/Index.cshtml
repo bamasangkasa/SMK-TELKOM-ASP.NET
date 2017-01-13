@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DealerMobil.Models.Mobil>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @using (@Html.BeginForm())
+    { 
+        <label>Search: </label>
+        <input type="text" name="searchMerk" placeholder="Merk"/>
+        <input type="submit" value="Go" />
+    }
+</p>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table cellpadding="10" width="900">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.namamobil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.merkmobil)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.namamobil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.merkmobil)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idmobil }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idmobil }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idmobil })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,22 @@
+﻿@model MyCompany.Models.Kelas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Kelas</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nama)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nama)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.KelasID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

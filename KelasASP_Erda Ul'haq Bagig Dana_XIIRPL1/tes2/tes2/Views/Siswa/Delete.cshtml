@@ -1,0 +1,46 @@
+﻿@model tes2.Models.Siswa
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Siswa</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NamaLengkap)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NamaLengkap)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NISN)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NISN)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sekolah.NamaSekolah)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sekolah.NamaSekolah)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

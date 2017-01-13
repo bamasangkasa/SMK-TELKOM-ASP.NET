@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = " SMK TELKOM MALANG";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                
+            </hgroup>
+            
+        </div>
+    </section>
+}
+<h3>We can use It:</h3>
+<ol class="round">
+    <li class="one">
+        @Html.ActionLink("Daftar Buku", "Index", "Buku")
+        <p>You can look a Book List</p>
+    </li>
+
+    <li class="two">
+        @Html.ActionLink("Peminjaman", "Index", "Perpus")
+        <p>You can borrow a Book</p>
+    </li>
+
+</ol>
+

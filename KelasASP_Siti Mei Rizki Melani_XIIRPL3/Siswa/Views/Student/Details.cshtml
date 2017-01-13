@@ -1,0 +1,43 @@
+﻿@model MyCompany.Models.Murid
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Murid</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NamaMurid)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NamaMurid)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Score)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Score)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Kelas.Nama)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Kelas.Nama)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.MuridID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

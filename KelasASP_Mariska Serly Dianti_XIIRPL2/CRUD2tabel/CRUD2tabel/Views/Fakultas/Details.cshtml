@@ -1,0 +1,22 @@
+﻿@model CRUD2tabel.Models.FakultasModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>FakultasModels</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Fakultas)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fakultas)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID_fakultas }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

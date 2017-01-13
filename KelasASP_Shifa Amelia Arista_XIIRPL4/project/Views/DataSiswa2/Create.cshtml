@@ -1,0 +1,91 @@
+﻿@model project.Models.DataSiswa
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>DataSiswa</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NamaLengkap)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NamaLengkap)
+            @Html.ValidationMessageFor(model => model.NamaLengkap)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TTL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TTL)
+            @Html.ValidationMessageFor(model => model.TTL)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Alamat)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Alamat)
+            @Html.ValidationMessageFor(model => model.Alamat)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.JK)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.JK)
+            @Html.ValidationMessageFor(model => model.JK)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NoTelp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NoTelp)
+            @Html.ValidationMessageFor(model => model.NoTelp)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HireDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HireDate)
+            @Html.ValidationMessageFor(model => model.HireDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.KodeKelas, "Kelas")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("KodeKelas", String.Empty)
+            @Html.ValidationMessageFor(model => model.KodeKelas)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

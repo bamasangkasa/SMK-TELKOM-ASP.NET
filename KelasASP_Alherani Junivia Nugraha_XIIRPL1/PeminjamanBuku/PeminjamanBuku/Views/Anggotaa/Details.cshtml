@@ -1,0 +1,43 @@
+﻿@model PeminjamanBuku.Models.Anggota
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Anggota</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NamaAnggota)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NamaAnggota)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TanggalLahir)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TanggalLahir)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Alamat)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Alamat)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TanggalMasuk)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TanggalMasuk)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.NoAnggota }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

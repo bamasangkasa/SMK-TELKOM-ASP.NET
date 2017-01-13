@@ -1,0 +1,45 @@
+﻿@model DealerMobil.Models.Mobil
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Mobil</legend>
+
+        @Html.HiddenFor(model => model.idmobil)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.namamobil)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.namamobil)
+            @Html.ValidationMessageFor(model => model.namamobil)
+        </div>
+        <br><br>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.merkmobil)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.merkmobil)
+            @Html.ValidationMessageFor(model => model.merkmobil)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

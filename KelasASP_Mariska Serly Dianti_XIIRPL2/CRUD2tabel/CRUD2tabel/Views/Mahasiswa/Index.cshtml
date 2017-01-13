@@ -1,0 +1,68 @@
+﻿@model IEnumerable<CRUD2tabel.Models.MahasiswaModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p> 
+    @using (@Html.BeginForm())
+    {
+        <label> Search </label>
+        <input type="text" name="searchName" placeholder="Nama" />
+         @Html.DropDownList("searchFakultas", "Fakultas")
+        <input type="submit" value="Go">
+    }
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.alamat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.jenis_kelamin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IPK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FakultasModels.Fakultas)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.alamat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.jenis_kelamin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IPK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FakultasModels.Fakultas)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_mhs }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_mhs }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_mhs })
+        </td>
+    </tr>
+}
+
+</table>

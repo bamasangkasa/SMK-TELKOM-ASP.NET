@@ -1,0 +1,29 @@
+﻿@model DealerMobil.Models.Mobil
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Mobil</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.namamobil)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.namamobil)
+    </div>
+    <br>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.merkmobil)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.merkmobil)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.idmobil }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

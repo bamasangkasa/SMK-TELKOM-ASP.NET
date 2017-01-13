@@ -1,0 +1,61 @@
+﻿@model MyCompany.Models.Murid
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Murid</legend>
+
+        @Html.HiddenFor(model => model.MuridID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NamaMurid)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NamaMurid)
+            @Html.ValidationMessageFor(model => model.NamaMurid)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Score)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Score)
+            @Html.ValidationMessageFor(model => model.Score)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.KelasID, "Kelas")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("KelasID", String.Empty)
+            @Html.ValidationMessageFor(model => model.KelasID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

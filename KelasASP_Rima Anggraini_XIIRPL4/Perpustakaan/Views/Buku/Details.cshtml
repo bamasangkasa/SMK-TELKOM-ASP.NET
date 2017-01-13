@@ -1,0 +1,36 @@
+﻿@model Perpustakaan.Models.Buku
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Buku</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nama_Buku)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nama_Buku)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nama_Pengarang)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nama_Pengarang)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Tahun_Terbit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tahun_Terbit)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id_Buku }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<tes2.Models.Siswa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamaLengkap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NISN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sekolah.NamaSekolah)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamaLengkap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NISN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sekolah.NamaSekolah)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDSiswa }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDSiswa }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDSiswa })
+        </td>
+    </tr>
+}
+
+</table>
+
+<p>
+    @using (@Html.BeginForm())
+    { 
+        <label>Cari Nama Siswa</label>
+        <input type="text" name="searchNama" placeholder="Nama" />
+        <input type ="submit" value="Search"/>
+    }
+</p>
